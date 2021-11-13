@@ -5,7 +5,7 @@
 In a linux terminal, you can ask with ```uname --all``` system information.
 with ```uname -p```, uname will print your processor.
 In my case, uname print ```x84_64```. I find what does mean 
-```[x84_64](https://en.wikipedia.org/wiki/X86-64)```.
+[```x84_64```](https://en.wikipedia.org/wiki/X86-64).
 x84_64 is a synonyme of AMD64.
 
 
