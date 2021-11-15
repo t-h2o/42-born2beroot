@@ -8,7 +8,8 @@
 * Create two crypt partition
 * SSH service on port 4242
 * not allow root whit SSH
-* use the firewall UFW and let open only the 4242 port
+* use the firewall UFW
+* let open only the 4242 port
 * the hostname machine is [login]42
 * set password rules
 	* expiration after 30 days

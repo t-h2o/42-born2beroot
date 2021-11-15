@@ -1,8 +1,20 @@
 # Users
 
-## links
+
+## Tools need
+
+A librairy for password rules
+
+```sudo apt-get install libpam-pwquality```
+
+
+## web documentation
 
 [linux config](https://linuxconfig.org/linux-reset-password-expiration-age-and-history)
+
+[pam-pwquality](https://man.archlinux.org/man/pam_pwquality.8)
+
+The projet[born2beroot](https://github.com/hanshazairi/42-born2beroot)
 
 
 ## main command
@@ -22,21 +34,27 @@ read this manual
 
 * expiration after 30 days
 * cannot rechange password before 2 days
-* password is 10 caracters, 1 uppercase, 1 digit and no 3 carater follow
-* cannot put the user name in the password
+* password is 10 caracters, 1 uppercase, 1 digit 
+* no 3 carater follow
+* no user name in the password
 * just for normal user, need 7 caraters not in the last password
 
 
-## Add user
+## expiration after 30 days
 
-```sudo adduser pol```
+To set maximum number of days between password change to existing users
+
+```$ sudo chage -M <days> <username>```
 
 
-## Password rules and policies
+## minimum days between password change
 
-A librairy for password rules
+```To set minimum number of days between password change```
 
-```sudo apt-get install libpam-pwquality```
+$ sudo chage -m <days> <username>
+
+
+## password is 10 caracters, 1 uppercase, 1 digit 
 
 edit rules password
 
