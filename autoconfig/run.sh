@@ -1,14 +1,62 @@
+ ######  #    # #          ##        #
+##     # #    # #          #   ##    #
+##     # #    # ######    ##    ### ##
+ ####### #    # #    #    #####   ###
+ ##   ## #    # #    #    #   ##  #
+  #    # ##   # #    #   ##  ### ##  ########### # #####
+  #    #  ##### #    #   #####   #        #      #     #
+#####################################     #      #    ##
+#                                   #     #      ##### #
+# Auto-config for born2beroot       #    ##     ###    #
+#                                   #   ###    ###     #
+##################################### #####    #########
+
+
+
+
+
+#####################################
+#                                   #
+#	Setting variable                #
+#                                   #
+#####################################
+
+
+
 username=tgrivel
 
-#	update the package manager
-apt update
 
-#	install sudo
-apt install sudo
 
-#	add user in the sudo group
-adduser $username sudo
 
+
+#####################################
+#                                   #
+#	Install package					#
+#                                   #
+#####################################
+
+
+	
+apt update			# update the package manager
+
+apt upgrade			# upgrade package
+
+apt install sudo	# install super-user do
+
+apt install ufw		# install the firewall
+
+
+
+
+
+#####################################
+#                                   #
+#	Set sudo setting				#
+#                                   #
+#####################################
+
+
+	
 # sudo setting
 	# folder for the log file
 mkdir /var/log/sudo
@@ -20,9 +68,6 @@ cp sudo_config /etc/sudoers.d/
 apt install openssh-server
 mv /etc/ssh/sshd_config /etc/ssh/sshd_config.bk
 cp sshd_config /etc/ssh/sshd_config
-
-# install the firewall
-apt install ufw
 
 # enable the firewall	
 ufw enable
