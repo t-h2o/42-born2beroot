@@ -2,7 +2,7 @@
 
 ## How use it
 
-```sh
+```
 $ su -
 $ apt install git
 $ git clone https://github.com/theo-grivel/42-born2beroot
