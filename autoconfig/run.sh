@@ -9,9 +9,9 @@
 #                                   #     #      ##### #
 # Auto-config for born2beroot       #    ##     ###    #
 #                                   #   ###    ###     #
-##################################### #####    #########
-
-
+# by tgrivel                        # #####    #########
+#                                   #
+#####################################
 
 
 
@@ -37,13 +37,17 @@ username=tgrivel
 
 
 	
-apt update			# update the package manager
+apt update						# update the package manager
 
-apt upgrade			# upgrade package
+apt upgrade						# upgrade package
 
-apt install sudo	# install super-user do
+apt install sudo				# install super-user do
 
-apt install ufw		# install the firewall
+apt install ufw					# install the firewall
+
+apt install libpam-pwquality	# password policy
+
+apt install openssh-server		# ssh server
 
 
 
@@ -56,33 +60,93 @@ apt install ufw		# install the firewall
 #####################################
 
 
-	
-# sudo setting
-	# folder for the log file
-mkdir /var/log/sudo
-touch /var/log/sudo/log_input_output_sudo
-cp sudo_config /etc/sudoers.d/
+
+adduser $username sudo						# Set the user in the sudo group
+mkdir /var/log/sudo		# create the folder will content the log file
+touch /var/log/sudo/log_input_output_sudo	# create the log file
+cp sudo_config /etc/sudoers.d/	# copy the sudo rules files in the good directories
 
 
-# SSH
-apt install openssh-server
+
+
+
+#####################################
+#                                   #
+#	SSH : secure shell				#
+#                                   #
+#####################################
+
+
+
 mv /etc/ssh/sshd_config /etc/ssh/sshd_config.bk
 cp sshd_config /etc/ssh/sshd_config
 
-# enable the firewall	
-ufw enable
 
 
-# user management
-mv /etc/login.defs /etc/login.defs.bk
-cp login.defs /etc/login.defs
 
 
-# password policy
-apt install libpam-pwquality
+
+#####################################
+#                                   #
+#	UFW : firewall					#
+#                                   #
+#####################################
 
 
-# cron
+
+ufw enable								# enable the firewall
+ufw allow 4242 comment 'service ssh'	# port 4242 for ssh
+
+
+
+
+
+#####################################
+#                                   #
+#	User management					#
+#                                   #
+#####################################
+
+
+
+mv /etc/login.defs /etc/login.defs.bk	# create a backup file of the original file
+cp login.defs /etc/login.defs # copy the config file
+
+
+
+
+
+#####################################
+#                                   #
+#	Monitoring script				#
+#                                   #
+#####################################
+
+
+
+mv monitoring.sh /path/to/scipt/
 crontab -u root -e
 23 */10 * * * * sh /path/to/script
+
+
+
+
+
+#####################################
+#                                   #
+#	Display the informations		#
+#                                   #
+#	for connect to the server       #
+#                                   #
+#####################################
+
+
+
+ip_address=hostname -I
+
+echo for connecte... type it...
+echo $username@$ip_adddress -p 4242
+
+
+
 
