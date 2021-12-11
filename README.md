@@ -54,3 +54,10 @@ In my case, I'll choose the "64-bit PC (amd64)"
 
 Mmm...
 Perhaps here for [download](https://www.debian.org/releases/stable/debian-installer/)
+
+## How secure your server...
+
+* remove root user acces via ssh
+* hard password
+* change port ssh (do not use 22)
+* use "fail2ban" servie, he ban ip address using brutforce
