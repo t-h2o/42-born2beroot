@@ -61,3 +61,130 @@ Perhaps here for [download](https://www.debian.org/releases/stable/debian-instal
 * hard password
 * change port ssh (do not use 22)
 * use "fail2ban" servie, he ban ip address using brutforce
+
+## create your VM
+
+1. Download for amd64 : [link](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.2.0-amd64-netinst.iso)
+2. (42 school) move the iso in goinfre folder
+3. open the program virtual box
+4. clic new
+
+```
+name : debian-amd64-tgrivel
+machine folder : Users/tgrivel/VirtualBox VMs
+type : linux
+Version : debian (64-bit)
+```
+
+5. ram
+
+```
+1024 MB
+```
+
+6. virtual hard disk
+
+* create virtual hard disk now
+* VDI (virtualBox disk image)
+* fixed size
+* create a folder vm-hd in goinfre
+* file location ```/goinfre/tgrivel/vm-hd/debian-amd64.vdi```
+* 8 GB
+
+7. you finished to create your VM...
+
+8. select your iso
+
+* setting
+* storage
+* Empty
+* (icon : little cd) 
+* choose a disk file
+
+9. start
+
+## Install debian
+
+1. Language
+
+```
+english
+```
+
+2. Location
+
+```
+other
+europe
+switzerland
+```
+
+3. ???
+
+```
+1st selection (US)
+```
+
+4. keymap
+
+```
+Americain English
+```
+
+5. hostname
+
+```
+tgrivel42
+```
+
+6. domain name
+
+```
+<empty>
+```
+
+7. root password
+
+```
+<rootPassWord>
+```
+
+8. Full name user
+
+```
+Theo Grivel
+```
+
+9. user name
+
+```
+tgrivel
+```
+
+10. user password
+
+```
+<userPassWord>
+```
+
+11. Partitions Disk
+
+```
+Manual
+```
+
+12. Select disk
+
+```
+8.6 GB
+yes
+```
+
+13. partions
+
+* create 2 partitions
+	* boot
+	* other
+encrypt the other
+setting the logical
+
