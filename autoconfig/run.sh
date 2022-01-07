@@ -60,10 +60,9 @@ package+="vim "					# Install text editor
 #                                   #
 #####################################
 
-apt update				# update the package manager
-apt upgrade				# upgrade package
-
-apt install $package	# install the list of package
+apt update					# update the package manager
+yes | apt upgrade			# upgrade package
+yes | apt install $package	# install the list of package
 
 
 
@@ -123,8 +122,9 @@ cp login.defs /etc/login.defs 				# copy the config file
 #                                   #
 #####################################
 
-mkdir /home/monitoring
+mkdir -p /home/monitoring
 cp monitoring.sh /home/monitoring
+crontab crontab_root_tgrivel
 # crontab -u root -e
 # 23 */10 * * * * sh /home/monitoring
 
