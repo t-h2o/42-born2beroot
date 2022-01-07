@@ -43,15 +43,14 @@
 #                                   #
 #####################################
 
-
-
+port_ssh=4242
 username=tgrivel
 
-package="sudo "					# Install super-user do
+package+="sudo "				# Install super-user do
 package+="ufw "					# Install firewall
 package+="libpam-pwquality "	# Install password authentification manager password quality
 package+="openssh-server "		# Install ssh server
-
+package+="vim "					# Install text editor
 
 
 
@@ -61,13 +60,10 @@ package+="openssh-server "		# Install ssh server
 #                                   #
 #####################################
 
-
-	
 apt update				# update the package manager
 apt upgrade				# upgrade package
 
 apt install $package	# install the list of package
-
 
 
 
@@ -88,21 +84,14 @@ cp sudo_config /etc/sudoers.d/				# copy the sudo rules files in the good direct
 
 
 
-
-
 #####################################
 #                                   #
 #	SSH : secure shell				#
 #                                   #
 #####################################
 
-
-
-mv /etc/ssh/sshd_config /etc/ssh/sshd_config.bk
+mv -n /etc/ssh/sshd_config /etc/ssh/sshd_config.bk
 cp sshd_config /etc/ssh/sshd_config
-
-
-
 
 
 
@@ -112,12 +101,8 @@ cp sshd_config /etc/ssh/sshd_config
 #                                   #
 #####################################
 
-
-
-ufw enable								# enable the firewall
-ufw allow 4242 comment 'service ssh'	# port 4242 for ssh
-
-
+ufw enable										# enable the firewall
+ufw allow $port_ssh/tcp comment 'service ssh'	# port 4242 for ssh
 
 
 
@@ -127,12 +112,8 @@ ufw allow 4242 comment 'service ssh'	# port 4242 for ssh
 #                                   #
 #####################################
 
-
-
-mv /etc/login.defs /etc/login.defs.bk	# create a backup file of the original file
-cp login.defs /etc/login.defs 			# copy the config file
-
-
+mv -n /etc/login.defs /etc/login.defs.bk	# create a backup file of the original file
+cp login.defs /etc/login.defs 				# copy the config file
 
 
 
@@ -142,13 +123,9 @@ cp login.defs /etc/login.defs 			# copy the config file
 #                                   #
 #####################################
 
-
-
 mv monitoring.sh /path/to/scipt/
-crontab -u root -e
-23 */10 * * * * sh /path/to/script
-
-
+# crontab -u root -e
+# 23 */10 * * * * sh /path/to/script
 
 
 
@@ -160,12 +137,12 @@ crontab -u root -e
 #                                   #
 #####################################
 
-
-
 ip=`hostname -I`
 
 echo to connect via ssh from other computer...
 echo ----------------------
-echo $username@$ip -p 4242
+echo ssh $username@$ip -p $port_ssh
 echo ----------------------
+
+
 

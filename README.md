@@ -101,6 +101,18 @@ Version : debian (64-bit)
 * (icon : little cd) 
 * choose a disk file
 
+9. network setting
+
+* setting
+* attached to : NAT
+* advanced
+* Port Forwarding
+* (icon plus up right)
+```
+protocole : TCP
+host port : 4242
+guest port : 42422
+
 9. start
 
 ## Install debian
@@ -187,4 +199,6 @@ yes
 	* other
 encrypt the other
 setting the logical
+
+
 
