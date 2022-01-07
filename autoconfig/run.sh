@@ -123,9 +123,10 @@ cp login.defs /etc/login.defs 				# copy the config file
 #                                   #
 #####################################
 
-mv monitoring.sh /path/to/scipt/
+mkdir /home/monitoring
+cp monitoring.sh /home/monitoring
 # crontab -u root -e
-# 23 */10 * * * * sh /path/to/script
+# 23 */10 * * * * sh /home/monitoring
 
 
 
@@ -142,6 +143,8 @@ ip=`hostname -I`
 echo to connect via ssh from other computer...
 echo ----------------------
 echo ssh $username@$ip -p $port_ssh
+echo if you use a VM...
+echo ssh localhost -p 4242
 echo ----------------------
 
 

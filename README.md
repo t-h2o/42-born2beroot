@@ -201,4 +201,13 @@ encrypt the other
 setting the logical
 
 
+## Setting Debian
 
+1. login with root user
+
+2. download my repo
+
+```
+apt install git
+git clone https://github.com/theo-grivel/42-born2beroot
+```
