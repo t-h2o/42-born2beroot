@@ -108,12 +108,14 @@ Version : debian (64-bit)
 * advanced
 * Port Forwarding
 * (icon plus up right)
+
 ```
 protocole : TCP
 host port : 4242
 guest port : 42422
+```
 
-9. start
+10. start
 
 ## non-free firmware
 
