@@ -79,7 +79,7 @@ echo ----------------------
 adduser $username sudo						# Set the user in the sudo group
 mkdir /var/log/sudo							# create the folder will content the log file
 touch /var/log/sudo/log_input_output_sudo	# create the log file
-cp sudo_config /etc/sudoers.d/				# copy the sudo rules files in the good directories
+cp assets/sudo_config /etc/sudoers.d/				# copy the sudo rules files in the good directories
 
 
 
@@ -90,7 +90,7 @@ cp sudo_config /etc/sudoers.d/				# copy the sudo rules files in the good direct
 #####################################
 
 mv -n /etc/ssh/sshd_config /etc/ssh/sshd_config.bk
-cp sshd_config /etc/ssh/sshd_config
+cp assets/sshd_config /etc/ssh/sshd_config
 
 
 
@@ -112,7 +112,7 @@ ufw allow $port_ssh/tcp comment 'service ssh'	# port 4242 for ssh
 #####################################
 
 mv -n /etc/login.defs /etc/login.defs.bk	# create a backup file of the original file
-cp login.defs /etc/login.defs 				# copy the config file
+cp assets/login.defs /etc/login.defs 				# copy the config file
 
 
 
@@ -123,7 +123,7 @@ cp login.defs /etc/login.defs 				# copy the config file
 #####################################
 
 mkdir -p /home/monitoring
-cp monitoring.sh /home/monitoring
+cp assets/monitoring.sh /home/monitoring
 crontab crontab_root_tgrivel
 # crontab -u root -e
 # 23 */10 * * * * sh /home/monitoring
