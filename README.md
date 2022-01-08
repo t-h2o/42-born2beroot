@@ -115,6 +115,30 @@ guest port : 42422
 
 9. start
 
+## non-free firmware
+
+Sometime you haven't free hardware. In this case you have two choices...
+
+1. use iso with non-free firwmare
+
+2. install like all good.
+
+In case 2, wait the moment who you need the file.
+format a usb key in FAT32, then put the file inside.
+In the installation <CTRL><ALT><F2>
+plug your key
+
+blkid, find the name of your usb key
+mount it
+```
+mkdir mnt/data
+mount /dev/sdx1 /mnt/data
+mv /mnt/data/path/to/file /lib/firmware
+```
+return in the installtion
+<CTRL><ALT><F1>
+OK?
+
 ## Install debian
 
 1. Language
