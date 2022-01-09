@@ -76,10 +76,23 @@ echo ----------------------
 echo sudo setting
 echo ----------------------
 
-adduser $username sudo						# Set the user in the sudo group
 mkdir /var/log/sudo							# create the folder will content the log file
 touch /var/log/sudo/log_input_output_sudo	# create the log file
-cp assets/sudo_config /etc/sudoers.d/				# copy the sudo rules files in the good directories
+cp assets/sudo_config /etc/sudoers.d/		# copy the sudo rules files in the good directories
+
+
+
+#####################################
+#                                   #
+#	users							#
+#                                   #
+#####################################
+
+	# excecute with sudo in normal user
+
+# sudo addgroup user42
+# display groups : groups %user
+# sudo usermod -a -G user42 $user
 
 
 
@@ -113,6 +126,17 @@ ufw allow $port_ssh/tcp comment 'service ssh'	# port 4242 for ssh
 
 mv -n /etc/login.defs /etc/login.defs.bk	# create a backup file of the original file
 cp assets/login.defs /etc/login.defs 				# copy the config file
+
+
+
+#####################################
+#                                   #
+#	pam								#
+#                                   #
+#####################################
+
+mv -n /etc/pam.d/common-password /etc/pam.d/common-password.bk
+cp assets/common-password /etc/pam.d/common-password
 
 
 
