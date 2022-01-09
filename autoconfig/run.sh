@@ -146,9 +146,7 @@ cp assets/common-password /etc/pam.d/common-password
 
 chmod +x assets/monitoring.sh
 cp assets/monitoring.sh /usr/local/bin/monitoring.sh
-crontab crontab_root_tgrivel
-# crontab -u root -e
-# */10 * * * * sh /usr/local/bin/monitoring.sh
+crontab assets/crontab_conf_tgrivel
 
 
 
