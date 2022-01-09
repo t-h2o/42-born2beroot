@@ -157,10 +157,10 @@ europe
 switzerland
 ```
 
-3. ???
+3. configurations locales
 
 ```
-1st selection (US)
+United states - en_us.UTF-8
 ```
 
 4. keymap
@@ -209,6 +209,15 @@ tgrivel
 
 ```
 Manual
+
+the minimum
+128M /boot
+2M /srv
+2M /homme
+2M /tmp
+1024M / (root)
+256M /var
+256M /var/log
 ```
 
 12. Select disk
@@ -225,6 +234,8 @@ yes
 	* other
 encrypt the other
 setting the logical
+
+14. a
 
 
 ## Setting Debian

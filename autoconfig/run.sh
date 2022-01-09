@@ -76,9 +76,9 @@ echo ----------------------
 echo sudo setting
 echo ----------------------
 
-mkdir /var/log/sudo							# create the folder will content the log file
-touch /var/log/sudo/log_input_output_sudo	# create the log file
-cp assets/sudo_config /etc/sudoers.d/		# copy the sudo rules files in the good directories
+mkdir /var/log/sudo									# create the folder will content the log file
+touch /var/log/sudo/log_input_output_sudo			# create the log file
+cp assets/sudo_config /etc/sudoers.d/sudo_config	# copy the sudo rules files in the good directories
 
 
 
@@ -88,11 +88,9 @@ cp assets/sudo_config /etc/sudoers.d/		# copy the sudo rules files in the good d
 #                                   #
 #####################################
 
-	# excecute with sudo in normal user
-
-# sudo addgroup user42
-# display groups : groups %user
-# sudo usermod -a -G user42 $user
+addgroup user42
+usermod -a -G user42 $username
+# groups %usernamer
 
 
 
@@ -115,7 +113,7 @@ cp assets/sshd_config /etc/ssh/sshd_config
 
 ufw enable										# enable the firewall
 ufw allow $port_ssh/tcp comment 'service ssh'	# port 4242 for ssh
-
+# yes | ufw delete 2	# delete the port ipv6
 
 
 #####################################
@@ -146,11 +144,11 @@ cp assets/common-password /etc/pam.d/common-password
 #                                   #
 #####################################
 
-mkdir -p /home/monitoring
-cp assets/monitoring.sh /home/monitoring
+chmod +x assets/monitoring.sh
+cp assets/monitoring.sh /usr/local/bin/monitoring.sh
 crontab crontab_root_tgrivel
 # crontab -u root -e
-# 23 */10 * * * * sh /home/monitoring
+# */10 * * * * sh /usr/local/bin/monitoring.sh
 
 
 
