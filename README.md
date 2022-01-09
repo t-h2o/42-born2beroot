@@ -237,3 +237,17 @@ setting the logical
 apt install git
 git clone https://github.com/theo-grivel/42-born2beroot
 ```
+
+## Finish
+
+1. shutdown your vm
+
+2. clic on icon 3 sticks of your vm
+
+3. selection snapchots
+
+4. clic on take (icon +)
+
+and give a name of your snapchot
+
+5. shasum vm.vdi
