@@ -14,8 +14,6 @@ A librairy for password rules
 
 [pam-pwquality](https://man.archlinux.org/man/pam_pwquality.8)
 
-The projet[born2beroot](https://github.com/hanshazairi/42-born2beroot)
-
 
 ## main command
 
