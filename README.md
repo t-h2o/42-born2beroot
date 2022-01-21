@@ -210,14 +210,45 @@ tgrivel
 ```
 Manual
 
-the minimum
-128M /boot
-2M /srv
-2M /homme
-2M /tmp
-1024M / (root)
-256M /var
-256M /var/log
+129M
+Ext2
+/boot
+
+max
+LVM
+
+encrypt /dev/sda2
+
+configure lvm
+create volume "LVMGroup"
+/dev/mapper/sda2_crypt
+
+8M
+[SWAP]
+
+srv
+8M
+/srv
+
+home
+8M
+/home
+
+tmp
+8M
+/tmp
+
+var
+257M
+/var
+
+var-log
+258M
+/var/log
+
+root
+max 
+/
 ```
 
 12. Select disk
@@ -247,6 +278,9 @@ setting the logical
 ```
 apt install git
 git clone https://github.com/theo-grivel/42-born2beroot
+cd autoconfig
+nano run.sh # change value like name user...
+./run.sh
 ```
 
 ## Finish
