@@ -102,6 +102,7 @@ usermod -a -G user42 $username
 
 mv -n /etc/ssh/sshd_config /etc/ssh/sshd_config.bk
 cp assets/sshd_config /etc/ssh/sshd_config
+usermod -a -G sudo $username
 
 
 
