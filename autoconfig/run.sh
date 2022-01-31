@@ -161,6 +161,8 @@ crontab assets/crontab_conf_tgrivel
 
 ip=`hostname -I`
 
+echo restart ssh...
+systemctl restart ssh
 echo to connect via ssh from other computer...
 echo ----------------------
 echo ssh $username@$ip -p $port_ssh
